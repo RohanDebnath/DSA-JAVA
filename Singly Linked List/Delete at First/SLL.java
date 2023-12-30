@@ -22,6 +22,10 @@ class SLL
     }
     void deleteAtFirst()
     {
+        if(head==null)
+        {
+            System.out.println("Nothing to delete"):
+        }else
         head=head.next;
     }
     public static void main(String[] args) {
