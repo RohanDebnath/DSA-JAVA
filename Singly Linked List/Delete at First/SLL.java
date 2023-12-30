@@ -24,7 +24,7 @@ class SLL
     {
         if(head==null)
         {
-            System.out.println("Nothing to delete"):
+            System.out.println("Nothing to delete");
         }else
         head=head.next;
     }
