@@ -29,47 +29,43 @@ public class CLL {
         }
         length++;
     }
-    void display()
-    {
-        ListNode currentListNode=last.next;
-        if(last==null)
-        {
+
+    void display() {
+        ListNode currentListNode = last.next;
+        if (last == null) {
             return;
-        }else
-        {
-            while (currentListNode!=last) {
-                System.out.print(currentListNode.data+"->");
-                currentListNode=currentListNode.next;
+        } else {
+            while (currentListNode != last) {
+                System.out.print(currentListNode.data + "->");
+                currentListNode = currentListNode.next;
             }
-            System.out.print(currentListNode.data+"->Null");
+            System.out.print(currentListNode.data + "->Null");
         }
     }
-    void insertAtBeginning(int val)
-    {
-        ListNode newListNode=new ListNode(val);
-        if(last==null)
-        {
-            last=newListNode;
-        }else{
-            newListNode.next=last.next;
-            last.next=newListNode;
+
+    void insertAtBeginning(int val) {
+        ListNode newListNode = new ListNode(val);
+        if (last == null) {
+            last = newListNode;
+        } else {
+            newListNode.next = last.next;
+            last.next = newListNode;
         }
         length++;
     }
+
     public static void main(String[] args) {
         CLL cll = new CLL();
-        boolean decision=true;
+        boolean decision = true;
         while (decision) {
             System.out.println("Do you want to insert Data? Y/N");
             Scanner sc = new Scanner(System.in);
-            char choice=sc.nextLine().charAt(0);
-            if(choice=='y'||choice=='Y')
-            {
+            char choice = sc.nextLine().charAt(0);
+            if (choice == 'y' || choice == 'Y') {
                 System.out.println("Please enter your value");
-                int val=sc.nextInt();
+                int val = sc.nextInt();
                 cll.addNode(val);
-            }else if(choice=='n'||choice=='N')
-            {
+            } else if (choice == 'n' || choice == 'N') {
                 break;
             }
 
