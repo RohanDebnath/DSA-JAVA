@@ -24,54 +24,51 @@ public class Queu {
         return length == 0;
     }
 
-    void EnQueue(int val)
-    {
-        ListNode newNode=new ListNode(val);
-        if(front==null)
-        {
-            front=newNode;
-        }else{
-            rear.next=newNode;
+    void EnQueue(int val) {
+        ListNode newNode = new ListNode(val);
+        if (front == null) {
+            front = newNode;
+        } else {
+            rear.next = newNode;
         }
-        rear=newNode;
+        rear = newNode;
         length++;
     }
-    void DeQueue()
-    {
-        if(isEmpty()){
+
+    void DeQueue() {
+        if (isEmpty()) {
             System.out.println("Nothing left in the Queue");
-        }else{
-            front=front.next;
+        } else {
+            front = front.next;
             length--;
         }
     }
-    void display()
-    {
-        ListNode currentListNode=front;
-        if(front==null)
-        {
+
+    void display() {
+        ListNode currentListNode = front;
+        if (front == null) {
             System.out.println("Nothing to print");
             return;
         }
-        while (currentListNode!=rear) {
-            System.out.print(currentListNode.data+"->");
-            currentListNode=currentListNode.next;
+        while (currentListNode != rear) {
+            System.out.print(currentListNode.data + "->");
+            currentListNode = currentListNode.next;
         }
-        System.out.println(currentListNode.data+"->NULL");
+        System.out.println(currentListNode.data + "->NULL");
     }
+
     public static void main(String[] args) {
-        Queu queu=new Queu();
-        boolean decision=true;
+        Queu queu = new Queu();
+        boolean decision = true;
         while (decision) {
             System.out.println("DO you want to add data? Y/N");
-            Scanner sc= new Scanner(System.in);
-            char choice=sc.nextLine().charAt(0);
-            if(choice=='y'||choice=='Y')
-            {
+            Scanner sc = new Scanner(System.in);
+            char choice = sc.nextLine().charAt(0);
+            if (choice == 'y' || choice == 'Y') {
                 System.out.println("Please enter your value");
-                int val=sc.nextInt();
+                int val = sc.nextInt();
                 queu.EnQueue(val);
-            }else if(choice=='n'||choice=='N'){
+            } else if (choice == 'n' || choice == 'N') {
                 break;
             }
         }
