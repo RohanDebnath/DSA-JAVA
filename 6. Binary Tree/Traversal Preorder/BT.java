@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class BT {
 
     private TreeNode root;
@@ -43,11 +45,30 @@ public class BT {
         recursive_Preorder(root.left);
         recursive_Preorder(root.right);
     }
+    void iterative_Preorder()
+    {
+        if(root==null)
+        return;
+        Stack<TreeNode> stack= new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode temp=stack.pop();
+            System.out.println(temp.data);
+
+            if(temp.right!=null)
+            stack.push(temp.right);
+
+            if(temp.left!=null)
+            stack.push(temp.left);
+        }
+    }
     public static void main(String[] args) {
         BT bt=new BT();
         bt.creation();
         System.out.println("Height of Tree:"+ bt.height(bt.root));
         System.out.println("Values");
         bt.recursive_Preorder(bt.root);
+        System.out.println();
+        bt.iterative_Preorder();
     }
 }
