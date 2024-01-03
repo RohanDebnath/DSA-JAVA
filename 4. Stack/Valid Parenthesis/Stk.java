@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class Stk {
     static void matchParenthesis(String str) {
-        Stack<Character> stack = new Stack();
+        Stack<Character> stack = new Stack<>();
         char arr[] = str.toCharArray();
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == '(' || arr[i] == '{' || arr[i] == '[')
