@@ -5,7 +5,6 @@
     output  {7,8,4,8,-1,-1} -1 declears that there is not element 
 */
 
-import java.util.Scanner;
 import java.util.Stack;
 
 class STK{
