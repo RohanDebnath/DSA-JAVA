@@ -40,9 +40,23 @@ class MaxPQ {
             index=index/2;  //Because we need to continue shifting up till new value is inserted at correct position
         }
     }
+    void print()
+    {
+        for(int i=1;i<=index;i++)
+        {
+            System.out.print(heap[i]+" ");
+        }
+    }
     public static void main(String[] args) {
         MaxPQ maxPQ= new MaxPQ(3);
+        maxPQ.insert(4);
+        maxPQ.insert(5);
+        maxPQ.insert(2);
+        maxPQ.insert(6);
+        maxPQ.insert(1);
+        maxPQ.insert(3);
         System.out.println(maxPQ.size());
         System.out.println(maxPQ.isEmpty());
+        maxPQ.print();
     }
 }
