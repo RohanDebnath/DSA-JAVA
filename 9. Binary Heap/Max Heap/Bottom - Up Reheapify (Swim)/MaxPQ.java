@@ -1,3 +1,4 @@
+//This approach is used while adding elements in the heap
 class MaxPQ {
     private Integer[] heap;
     private int index;
