@@ -25,21 +25,31 @@ class MaxPQ {
     }
     private void resize(int capacity){
         Integer temp[]= new Integer[capacity];
-        for (int i = 0; i < heap.length; i++) {
+        for (int i = 1; i <=index; i++) {
             temp[i]=heap[i];
         }
         heap=temp;
     }
     void swim(int index)
     {
-        if(index>1 && heap[index/2]<heap[index])
+        while(index>1 && heap[index/2]<heap[index])
         {
             heap[index]=heap[index]^heap[index/2];
             heap[index/2]=heap[index]^heap[index/2];
             heap[index]=heap[index]^heap[index/2];
             index=index/2;  //Because we need to continue shifting up till new value is inserted at correct position
+           
         }
     }
+    // void swim(int index) {
+    //     while (index > 1 && heap[index / 2] < heap[index]) {
+    //         int temp = heap[index];
+    //         heap[index] = heap[index / 2];
+    //         heap[index / 2] = temp;
+    //         index = index / 2;
+    //     }
+    // }
+    
     void print()
     {
         for(int i=1;i<=index;i++)
