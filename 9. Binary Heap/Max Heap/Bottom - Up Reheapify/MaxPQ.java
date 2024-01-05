@@ -37,7 +37,7 @@ class MaxPQ {
             heap[index]=heap[index]^heap[index/2];
             heap[index/2]=heap[index]^heap[index/2];
             heap[index]=heap[index]^heap[index/2];
-            index=index/2;
+            index=index/2;  //Because we need to continue shifting up till new value is inserted at correct position
         }
     }
     public static void main(String[] args) {
