@@ -17,11 +17,18 @@ class MaxPQ {
     void insert(int val)
     {
         if(index==heap.length-1){
-            // resize(2*heap.length);
+            resize(2*heap.length);
         }
         index++;
         heap[index]=val;
         swim(index);
+    }
+    private void resize(int capacity){
+        Integer temp[]= new Integer[capacity];
+        for (int i = 0; i < heap.length; i++) {
+            temp[i]=heap[i];
+        }
+        heap=temp;
     }
     void swim(int index)
     {
