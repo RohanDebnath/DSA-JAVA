@@ -13,11 +13,11 @@ public class ReArrange {
         int maxIn=arr.length-1;
         int max=arr[arr.length-1]+1;
         for (int i = 0; i < arr.length; i++) {
-            if(i==0){
-                arr[i]=arr[i]+(arr[maxIn%10])*10;
+            if(i%2==0){
+                arr[i]=arr[i]+(arr[maxIn]%max)*max;
                 maxIn--;
             }else{
-                arr[i]=arr[i]+(arr[minIn]%10)*10;
+                arr[i]=arr[i]+(arr[minIn]%max)*max;
                 minIn++;
             }
         }

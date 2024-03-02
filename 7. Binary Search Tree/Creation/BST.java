@@ -42,25 +42,25 @@ public class BST {
     }
     public static void main(String[] args) {
         BST bst= new BST();
-        // bst.insert(5);
-        // bst.insert(3);
-        // bst.insert(7);
-        // bst.insert(1);
-        boolean decision=true;
-        while (decision) {
-            Scanner sc= new Scanner(System.in);
-            System.out.println("Press Y/N");
-            char choice=sc.nextLine().charAt(0);
-            if(choice=='y'||choice=='Y')
-            {
-                System.out.println("Please enter your value");
-                int val=sc.nextInt();
-                bst.insert(val);
-            }else if(choice=='n'||choice=='N')
-            {
-                break;
-            }
-        }
+        bst.insert(5);
+        bst.insert(3);
+        bst.insert(7);
+        bst.insert(1);
+        // boolean decision=true;
+        // while (decision) {
+        //     Scanner sc= new Scanner(System.in);
+        //     System.out.println("Press Y/N");
+        //     char choice=sc.nextLine().charAt(0);
+        //     if(choice=='y'||choice=='Y')
+        //     {
+        //         System.out.println("Please enter your value");
+        //         int val=sc.nextInt();
+        //         bst.insert(val);
+        //     }else if(choice=='n'||choice=='N')
+        //     {
+        //         break;
+        //     }
+        // }
         bst.recursive_Inorder(bst.root);
     }
 }
